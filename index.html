@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>Crazy Marquee Builder</title>
+</head>
+<body>
+    <div id="app" style="height: 100%;">Test</div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="underscore.js"></script>
+    <script type="text/javascript" src="backbone.js"></script>
+    <script type="text/javascript" src="backbone.nopersistence.js"></script>
+    <!--  <script type="text/javascript" src="live.js"></script> -->
+    <script type="text/javascript" src="crazy_marquee.js"></script>
+    <script type="text/template" id="marquee_template">
+        <marquee style="background-color: <%- bg_color %>; color: <%- fg_color %>;"> <%- message %></marquee>
+        <div class='editor'> 
+            <input class='message' type='text' value="<%- message %>">
+            <input class='fg_color' type='color' value="<%- fg_color %>">
+            <input class='bg_color' type='color' value="<%- bg_color %>">
+        </div>
+    </script>
+</body>
+</html>
