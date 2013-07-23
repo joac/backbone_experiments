@@ -22,7 +22,10 @@ $(function(){
     
     events: {
       "click marquee" : "edit",
-      "keypress .editor" : "update",
+      "keypress .editor" : "onEnterPress",
+      "click .ok": "update",
+      "click .cancel": "cancel",
+
     },
 
     initialize: function() {
@@ -45,16 +48,21 @@ $(function(){
       this.$editor.show();
     },
 
-    update: function (e) {
-      console.log(e);
-      if (e.keyCode == 13) {
-        this.model.save({
-          message: this.$message.val(),
-          fg_color: this.$fg_color.val(),
-          bg_color: this.$bg_color.val(),
-        })
-      };
-    }
+    cancel: function() {
+      this.$marquee.show();
+      this.$editor.hide();
+    },
+
+    onEnterPress: function(e) {
+      if (e.keyCode == 13) this.update();
+    },
+    update: function () {
+      this.model.save({
+        message: this.$message.val(),
+        fg_color: this.$fg_color.val(),
+        bg_color: this.$bg_color.val(),
+      })
+    },
   });
 
   //Full Aplication view
@@ -62,7 +70,7 @@ $(function(){
   var AppView =  Backbone.View.extend({
     el: $("#app"),
     events: {
-      "click": "newMarquee",
+      "dblclick": "newMarquee",
     },
 
     initialize: function() {

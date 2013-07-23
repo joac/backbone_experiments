@@ -13,9 +13,16 @@
     <script type="text/template" id="marquee_template">
         <marquee style="background-color: <%- bg_color %>; color: <%- fg_color %>;"> <%- message %></marquee>
         <div class='editor'> 
-            <input class='message' type='text' value="<%- message %>">
-            <input class='fg_color' type='color' value="<%- fg_color %>">
-            <input class='bg_color' type='color' value="<%- bg_color %>">
+            <dl>
+            <dt>Message</dt>
+            <dd><input class='message' type='text' value="<%- message %>"></dd>
+            <dt>Foreground Color</dt>
+            <dd><input class='fg_color' type='color' value="<%- fg_color %>"></dd>
+            <dt>Background Color</dt>
+            <dd><input class='bg_color' type='color' value="<%- bg_color %>"></dd>
+            </dl>
+            <button class='ok'>Update</button>
+            <button class='cancel'>Cancel</button>
         </div>
     </script>
 </body>
