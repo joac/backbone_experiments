@@ -1,29 +1,24 @@
 <html>
-<head>
-    <title>Crazy Marquee Builder</title>
-</head>
-<body>
-    <div id="app" style="height: 100%;"><h1>Double Click on page to start creating marquees!</h1></div>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script type="text/javascript" src="underscore.js"></script>
-    <script type="text/javascript" src="backbone.js"></script>
-    <script type="text/javascript" src="backbone.nopersistence.js"></script>
-    <!--  <script type="text/javascript" src="live.js"></script> -->
-    <script type="text/javascript" src="crazy_marquee.js"></script>
-    <script type="text/template" id="marquee_template">
-        <marquee style="background-color: <%- bg_color %>; color: <%- fg_color %>;"> <%- message %></marquee>
-        <div class='editor'> 
-            <dl>
-            <dt>Message</dt>
-            <dd><input class='message' type='text' value="<%- message %>"></dd>
-            <dt>Foreground Color</dt>
-            <dd><input class='fg_color' type='color' value="<%- fg_color %>"></dd>
-            <dt>Background Color</dt>
-            <dd><input class='bg_color' type='color' value="<%- bg_color %>"></dd>
-            </dl>
-            <button class='ok'>Update</button>
-            <button class='cancel'>Cancel</button>
+  <head>
+    <title>Backbone Examples</title>
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="/css/base.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
+    <div class='container'>
+      <div class='page-header'>
+      <h1>Backbone Examples
+      <small>Small applications for backbone learning</small></h1>
+    </div>
+        <div class='row'>
+          
+          <h2><a href='examples/crazy_marquee.html'>Crazy Marquee</a></h2>
+          <p> Add marquees dinamicaly and edit text, foreground and background colors </p> 
+          <a href='examples/crazy_marquee.html'>Go!</a>
+          
         </div>
-    </script>
-</body>
+    </div> 
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+  </body>
 </html>
