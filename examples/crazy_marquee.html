@@ -6,17 +6,21 @@
 </head>
 <body>
   <div class='container'>
-    <div id="app" style="height: 100%;">
+    <div id="app">
       <h1>Crazy Marquee</h1>
       <p class='lead'>Double Click on page to start creating marquees!</p>
+      
     </div>
+    
+    <h2>Source Code</h2>
+    <pre id="source_code_container"></pre>
     </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script type="text/javascript" src="../lib/underscore.js"></script>
     <script type="text/javascript" src="../lib/backbone.js"></script>
     <script type="text/javascript" src="../lib/backbone.nopersistence.js"></script>
     <!--  <script type="text/javascript" src="live.js"></script> -->
-    <script type="text/javascript" src="crazy_marquee.js"></script>
+    <script type="text/javascript" src="crazy_marquee.js" id='code_source'></script>
     <script type="text/template" id="marquee_template">
         <marquee style="background-color: <%- bg_color %>; color: <%- fg_color %>;"> <%- message %></marquee>
         <div class='editor'> 
@@ -37,5 +41,10 @@
         </div>
     </script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script type='text/javascript'>
+        $(document).ready(function(){
+            $.get($('#code_source').attr('src'), function(data){$('#source_code_container').html(data)}, 'text');
+            });
+    </script>
   </body>
 </html>
